@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}首页 - 智能助手{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+            <div class="card-header bg-primary text-white">
+                <h1 class="display-4">欢迎使用智能助手</h1>
+            </div>
+            <div class="card-body">
+                <p class="lead">这是一个基于知识图谱的智能问答系统，可以回答您关于学术、技术等方面的问题。</p>
+                
+                {% if session.username %}
+                <div class="alert alert-success">
+                    <h4>您已登录为 {{ session.username }}</h4>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg mt-3">进入个人中心</a>
+                </div>
+                {% else %}
+                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4">
+                    <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4 gap-3">登录</a>
+                    <a href="{{ url_for('register') }}" class="btn btn-outline-primary btn-lg px-4">注册</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
