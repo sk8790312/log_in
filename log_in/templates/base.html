@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary main-navbar">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">智能助手 - 知识图谱系统</a>
+            <a class="navbar-brand d-flex align-items-end" href="{{ url_for('index') }}">
+                <span class="navbar-title">智能助教系统</span>
+                <span class="navbar-subtitle ms-2">AI驱动的知识管理与学习辅助平台</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +42,7 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    <div class="container">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -54,9 +57,10 @@
         {% block content %}{% endblock %}
     </div>
 
-    <footer class="footer mt-5 py-3 bg-light">
+    <footer class="footer mt-5 py-3 bg-light main-footer">
         <div class="container text-center">
-            <span class="text-muted">© 智能助手 - 知识图谱系统</span>
+            <div class="footer-title">智能助教系统</div>
+            <div class="footer-subtitle">AI驱动的知识管理与学习辅助平台</div>
         </div>
     </footer>
 

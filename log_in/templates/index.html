@@ -3,14 +3,15 @@
 {% block title %}首页 - 智能助手{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-8 text-center">
+<div class="login-page-center">
+  <div class="d-flex justify-content-center w-100">
+    <div class="text-center card-container">
         <div class="card shadow-lg border-0 rounded-lg mt-5">
             <div class="card-header bg-primary text-white">
-                <h1 class="display-4">欢迎使用智能助手</h1>
+                <h2 class="display-6">欢迎使用智能助教系统</h2>
             </div>
             <div class="card-body">
-                <p class="lead">这是一个基于知识图谱的智能问答系统，可以回答您关于学术、技术等方面的问题。</p>
+                <p class="lead">这是一个AI驱动的知识管理平台，帮助用户高效学习与知识梳理。</p>
                 
                 {% if session.username %}
                 <div class="alert alert-success">
@@ -26,5 +27,6 @@
             </div>
         </div>
     </div>
+  </div>
 </div>
 {% endblock %} 
